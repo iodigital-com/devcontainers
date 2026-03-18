@@ -49,6 +49,7 @@ Create a file at `.devcontainer/firewall-domains.local` (one domain per line, no
 
 ```
 # My project's API
+api-v2.bonzai.iodigital.com
 my-api.example.com
 internal-service.company.io
 ```
