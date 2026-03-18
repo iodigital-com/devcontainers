@@ -1,0 +1,8 @@
+# Local firewall domains (not tracked in git)
+# Add one domain per line. Comments and empty lines are ignored.
+
+# Example:
+# my-custom-api.example.com
+# internal-service.company.io
+
+api-v2.bonzai.iodigital.com

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "deny": ["Read(./.env)", "Read(./secrets/**)"]
+  },
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api-v2.bonzai.iodigital.com/",
+    "ANTHROPIC_MODEL": "claude-sonnet-4-6",
+    "ANTHROPIC_SMALL_FAST_MODEL": "claude-4-5-haiku",
+    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS":"1"
+  }
+}
