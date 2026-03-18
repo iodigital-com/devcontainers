@@ -58,20 +58,42 @@ This file is loaded automatically on container startup.
 
 ---
 
-## Usage
+## Getting started
 
-### VS Code / Cursor Dev Containers
+### 1. Copy the devcontainer into your project
 
-1. Open the desired variant folder (`HACK DEVCON` or `HACK DEVCON - NO FIREWALL`) in VS Code.
-2. Install the **Dev Containers** extension if not already installed.
+Pick the variant you want and copy its `.devcontainer` folder into the root of your project:
+
+```bash
+# With firewall
+cp -r "HACK DEVCON/.devcontainer" /path/to/your-project/
+
+# Without firewall
+cp -r "HACK DEVCON - NO FIREWALL/.devcontainer" /path/to/your-project/
+```
+
+### 2. Merge the docker-compose.yml
+
+If your project already has a `docker-compose.yml`, merge the `claude-code-sandbox` service and its volumes into it. If not, copy it directly:
+
+```bash
+cp "HACK DEVCON/docker-compose.yml" /path/to/your-project/
+```
+
+The `docker-compose.override.yml` is intentionally empty — use it for local overrides that you don't want committed.
+
+### 3. Open in VS Code / Cursor
+
+1. Install the **Dev Containers** extension if not already installed.
+2. Open your project in VS Code.
 3. Run **"Dev Containers: Reopen in Container"** from the command palette.
 
 The container builds, applies the firewall (if applicable), and opens with Claude Code ready to use.
 
-### Docker Compose (standalone)
+### Docker Compose (without VS Code)
 
 ```bash
-cd "HACK DEVCON"
+cd your-project
 TZ=Europe/Amsterdam docker compose --profile development up -d
 docker compose exec claude-code-sandbox zsh
 ```
